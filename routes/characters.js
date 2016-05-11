@@ -3,11 +3,11 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('characterView');
+  res.render('characters');
 });
 
 router.get('/:id', function(req, res, next) {
-  res.render('characterView');
+  res.render('characterview');
 });
 
 module.exports = router;

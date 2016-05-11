@@ -6,8 +6,10 @@ var router = express.Router();
   res.render('index', { title: 'Game of DEVs' });
 });
 
- // app.get('/houseIndex', function(req, res) {
- // res.redirect('/houseV')
- // })
+ router.get('/:id', function(req, res, next) {
+  res.render('houseview', { title: 'Game of DEVs' });
+});
+
+
 
 module.exports = router;
