@@ -92,19 +92,19 @@ test('it gets all the characters', function (t) {
 })
 
 
-// test('it gets a particular House', function (t) {
-//   db.findOne('houses', { id: 1 }, function (err, resp) {
-//     t.equal(resp.name, "House Roa", 'it got the right house')
-//     t.end()
-//   })
-// })
+test('it gets a particular House', function (t) {
+  db.findOne('houses', { id: 1 }, function (err, resp) {
+    t.equal(resp["name"], "House Roa", 'it got the right house')
+    t.end()
+  })
+})
 
-// test('it gets a particular Character', function (t) {
-//   db.findOne('characters', { id: 1 }, function (err, resp) {
-//     t.equal(resp.name, "Olly", 'it got the right house')
-//     t.end()
-//   })
-// })
+test('it gets a particular Character', function (t) {
+  db.findOne('characters', { id: 1 }, function (err, resp) {
+    t.equal(resp.name, "Olly", 'it got the right house')
+    t.end()
+  })
+})
 
 test("test add House function", function (t) {
   db.addNew('houses', Tieke, function(undefined, dbresponse) {
@@ -117,6 +117,13 @@ test("test update House function", function(t){
   db.update('houses',{id: TiekeUpdate.id},TiekeUpdate, function(undefined, dbresponse){
   t.ok(dbresponse!==undefined)
   t.end()
+  })
+})
+
+test('it gets a particular Character', function (t) {
+  db.findAllInHouse('characters', { houseId: 1 }, function (err, resp) {
+    t.equal(resp.name, "Olly", 'it got the right house')
+    t.end()
   })
 })
 
