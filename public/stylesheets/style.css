@@ -1,7 +1,15 @@
+@font-face {
+    font-family: GOTfont;
+    src: url(GameofThrones.ttf);
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", sans-serif, Arial, sans-serif;
+  font: 14px "GOTfont", sans-serif, Arial, sans-serif;
 }
+
+
+
 
 a {
   color: #00B7FF;
