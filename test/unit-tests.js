@@ -1,11 +1,10 @@
 var redtape = require('redtape')
-var App = require('../../server')
-var dbConfig = require('../../db-config')
+var App = require('../server')
+var dbConfig = require('../db-config')
 var knex = dbConfig.knex
 var config = dbConfig.config
 
-
-var db = require('../../db')(knex)
+var db = require('../db')(knex)
 
 var broc = {
   name: 'Broc',
@@ -65,15 +64,15 @@ test('it gets all the characters in a house', function (t) {
 
 
 test('it gets a particular House', function (t) {
-  db.findOne('artists', { id: 1 }, function (err, resp) {
-    t.equal(resp.name, carlos.name, 'it got the artist')
+  db.findOne('houses', { id: 1 }, function (err, resp) {
+    t.equal(resp.name, "Roa", 'it got the right house')
     t.end()
   })
 })
 
 test('it gets a particular Character', function (t) {
-  db.findOne('artists', { id: 1 }, function (err, resp) {
-    t.equal(resp.name, carlos.name, 'it got the artist')
+  db.findOne('characters', { id: 1 }, function (err, resp) {
+    t.equal(resp.name, "Olly", 'it got the right house')
     t.end()
   })
 })
