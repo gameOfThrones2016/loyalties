@@ -46,8 +46,8 @@ test('setup', function (t) {
 // db.getAll
 test('it gets all the houses', function (t) {
   db.getAll('houses', function (err, resp) {
-    housesNames.map(function(house) {
-      t.equal(housesNames[i], resp[i].name, 'Correct house names return in list')
+    housesNames.map(function(house, i) {
+      t.equal(resp.name, house, 'Correct house names return in list')
     })
     t.end()
   })
