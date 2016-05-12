@@ -6,12 +6,21 @@ var router = express.Router();
   res.render('houseindex', { title: 'Game of DEVs' });
 });
 
- router.get('/:id', function(req, res, next) {
+ router.get('/house/:id', function(req, res, next) {
   res.render('houseview', { title: ' thou a Capulet?' });
 });
 
  router.get('/character/:id', function(req, res, next) {
-  res.render('characters', { title: 'a Capulet?' });
+  res.render('characterview', { title: 'a Capulet?' });
+});
+
+router.get('/characters/', function(req, res, next) {
+  res.render('characterIndex', { title: 'Dev of the Day' });
+});
+
+router.get('/newcharacter', function(req, res, next) {
+  console.log("waaat")
+  res.render('newCharacter', { title: 'A New Dev' });
 });
 
 
