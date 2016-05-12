@@ -1,8 +1,47 @@
+@font-face {
+    font-family: GOTfont;
+    src: url(GameofThrones.ttf);
+}
+html {
+    background: url(../images/kings-landing.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", sans-serif, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font: 14px "GOTfont", sans-serif, Arial, sans-serif;
+  height: auto;
+
+}
+
+nav a {
+  display: inline-flex;
+  padding-right: 30px;
+
 }
 
 a {
   color: #00B7FF;
+}
+.houses {
+  display: flex;
+  justify-content: space-around;
+}
+
+header {
+
+}
+
+#houseIndexWrapper {
+
+  height: auto;
+
+}
+
+#footer {
+  position: relative;
+  top: 820px;
+  color: white;
 }
