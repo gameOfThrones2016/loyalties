@@ -1,10 +1,10 @@
 var redtape = require('redtape')
-var App = require('../server')
+// var App = require('../server')
 var dbConfig = require('../db-config')
 var knex = dbConfig.knex
 var config = dbConfig.config
 
-var db = require('../db')(knex)
+var db = require('../lib/db')(knex)
 
 var broc = {
   name: 'Broc',
