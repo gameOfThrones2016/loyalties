@@ -19,10 +19,20 @@ router.get('/characters/', function(req, res, next) {
 });
 
 router.get('/newcharacter', function(req, res, next) {
-  console.log("waaat")
   res.render('newCharacter', { title: 'A New Dev' });
 });
 
+router.get('/newhouse', function(req, res, next) {
+  console.log("waaat")
+  res.render('newHouse', { title: 'A New Dev' });
+});
 
+router.get('/character/edit/:id', function(req, res, next) {
+  res.render('editCharacter', { title: 'Dev of the Day' });
+});
+
+router.get('/house/edit/:id', function(req, res, next) {
+  res.render('editHouse', { title: 'Dev of the Day' });
+});
 
 module.exports = router;
