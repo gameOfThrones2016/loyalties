@@ -31,6 +31,9 @@ var roaChars = ["Olly", "Hape", " Uili", "Surya"]
 var test = redtape({
   beforeEach: function (callback) {
     return knex.migrate.latest(config)
+      .then(function() {
+         return knex.seed.run()
+      })
       .then(function () {
         callback()
       })
