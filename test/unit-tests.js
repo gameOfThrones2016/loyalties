@@ -13,6 +13,11 @@ var broc = {
   imagePath: "#",
   description: "Broc is the Chief Maester to House Roa"
 }
+var Tieke = {
+  name: 'House Tieke',
+  imagePath: "#",
+  description: "Tieke is the next House of the realm"
+}
 
 var housesNames = ["House Roa", "House Hihi", "House EDA", "House Kotare"]
 var roaChars = ["Olly", "Hape", " Uili", "Surya"]
@@ -25,12 +30,12 @@ var test = redtape({
       })
   },
 
-  afterEach: function (callback) {
-    knex.migrate.rollback(config)
-      .then(function () {
-        callback()
-      })
-  }
+  // afterEach: function (callback) {
+  //   knex.migrate.rollback(config)
+  //     .then(function () {
+  //       callback()
+  //     })
+  // }
 })
 
 test('setup', function (t) {
@@ -41,13 +46,19 @@ test('setup', function (t) {
 })
 
 
-test("test add character function", function (t) {
+test("test add Character function", function (t) {
   db.addNew('characters', broc, function(undefined, dbresponse) {
     t.ok(dbresponse[0]>0)
     t.end()
   })
 })
 
+test("test add House function", function (t) {
+  db.addNew('houses', Tieke, function(undefined, dbresponse) {
+    t.ok(dbresponse[0]>0)
+    t.end()
+  })
+})
 
 
 
