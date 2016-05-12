@@ -28,3 +28,7 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
+
+#profile pics not sent to git hub
+public/images/profile-pics
+
