@@ -59,6 +59,15 @@ test("test add Character function", function (t) {
   })
 })
 
+test('it gets all the houses', function (t) {
+  db.getAll('houses', function (err, resp) {
+    housesNames.map(function(house, i) {
+      t.equal(resp.name, house, 'Correct house names return in list')
+    })
+    t.end()
+  })
+})
+
 test("test add House function", function (t) {
   db.addNew('houses', Tieke, function(undefined, dbresponse) {
     t.ok(dbresponse[0]>0)
