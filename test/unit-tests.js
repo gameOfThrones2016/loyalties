@@ -19,6 +19,12 @@ var Tieke = {
   description: "Tieke is the next House of the realm"
 }
 
+var TiekeUpdate = {
+  id: 1,
+  name: 'House Tieke',
+  imagePath: "#",
+  description: "Tieke table updated"
+}
 var housesNames = ["House Roa", "House Hihi", "House EDA", "House Kotare"]
 var roaChars = ["Olly", "Hape", " Uili", "Surya"]
 
@@ -30,12 +36,12 @@ var test = redtape({
       })
   },
 
-  // afterEach: function (callback) {
-  //   knex.migrate.rollback(config)
-  //     .then(function () {
-  //       callback()
-  //     })
-  // }
+  afterEach: function (callback) {
+    knex.migrate.rollback(config)
+      .then(function () {
+        callback()
+      })
+  }
 })
 
 test('setup', function (t) {
@@ -57,6 +63,13 @@ test("test add House function", function (t) {
   db.addNew('houses', Tieke, function(undefined, dbresponse) {
     t.ok(dbresponse[0]>0)
     t.end()
+  })
+})
+
+test("test update House function", function(t){
+  db.update('houses',{id: TiekeUpdate.id},TiekeUpdate, function(undefined, dbresponse){
+  t.ok(dbresponse!==undefined)
+  t.end()
   })
 })
 
