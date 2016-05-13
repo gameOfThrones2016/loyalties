@@ -10,6 +10,8 @@ var routes = require('./routes/index');
 
 var app = express();
 
+app.use('/static', express.static(__dirname));
+
 // view engine setup
 app.engine('hbs', hbs.express4({
   // partialsDir: __dirname + '/views/partials/',
