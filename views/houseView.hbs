@@ -19,9 +19,11 @@
 <div class="members-wrapper">
 <div class="members">
   {{#each People}}
+   <a href="/characters/{{id}}">
     <h3>{{name}}</h3>
       <br>
    <img src="{{imagePath}}" >
+   </a>
       <br>
     <p>{{description}}</p>
     <br>
@@ -29,3 +31,5 @@
 </div>
 </div>
 </div>
+
+

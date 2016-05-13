@@ -1,6 +1,15 @@
-{{#each Character}}
-{{people}}
-{{house}}
-{{imagePath}}
-{{description}}
-{{/each}}
+<div class="wrapper">
+<div class="container" id="houseIndexWrapper">
+
+  <div class ="house-view">
+    {{#each Character}}
+          <img src="{{imagePath}}" class="profilepic">
+      <div class="houseDetails">
+          <h1>{{name}}</h1>
+          <p>{{house}}</p>
+          <p>{{description}}</p>
+
+      </div>
+    {{/each}}
+  </div>
+</div>
