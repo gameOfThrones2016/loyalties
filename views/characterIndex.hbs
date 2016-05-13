@@ -1,10 +1,20 @@
-{{#each Characters}}
-{{name}}
-<br>
-{{house}}
-<br>
-{{imagePath}}
-<br>
-{{description}}
-<br>
-{{/each}}
+
+
+
+<div class="container" id="houseIndexWrapper">
+  <header>
+
+  <h1>Game of DEVs</h1>
+ </header>
+
+
+  <div class ="display-houses">
+    {{#each Characters}}
+      <div class="house">
+          <p>{{name}}</p>
+          <a href="/characters/{{id}}"><img src="{{imagePath}}" class="houseimage"></a>
+      </div>
+    {{/each}}
+  </div>
+
+</div>
