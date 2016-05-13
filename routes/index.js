@@ -6,6 +6,7 @@ var knex = Knex(config[process.env.NODE_ENV || 'development'])
 var db = require('../lib/db')(knex)
 
 /* GET home page. */
+//-------DONE-------------//
  router.get('/', function(req, res, next) {
   db.getAll('houses', function(err, data) {
     res.render('houseindex', { Houses: data });
@@ -13,11 +14,10 @@ var db = require('../lib/db')(knex)
 });
 
  //   Houses routes
-
+//DONE----------HOUSE By ID--------------//
 router.get('/house/:id', function(req, res, next) {
   db.findOne('houses', req.params, function(err, data){
     db.findAllInHouse('characters', req.params.id, function(err, characters){
-      console.log({ House: data, People: characters })
       res.render('houseview', { House: [data], People: characters });
     })
   })
@@ -37,12 +37,15 @@ router.get('/house/edit/:id', function(req, res, next) {
 
 // Characters routes
 router.get('/characters/', function(req, res, next) {
-  res.render('characterIndex', { title: 'Dev of the Day' });
+  db.getAll('characters', function(err, data) {
+    res.render('characterIndex', { Characters: data });
+  })
 });
-
+//DONE----One Character-----//
 router.get('/characters/:id', function(req, res, next) {
-  db.findOne('characters', req.params)
-  res.render('characterview', { title: 'a Capulet?' });
+  db.findOne('characters', req.params, function(err, person){
+    res.render('characterview', { Character: [person]});
+  })
 });
 
 router.get('/newcharacter', function(req, res, next) {
