@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}House</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <p>House View </p>
-    {{{body}}}
-  </body>
-</html>
+{{#each House}}
+{{name}}
+<br>
+{{imagePath}}
+<br>
+{{description}}
+<br>
+{{/each}}
+
+{{#each People}}
+{{name}}
+<br>
+{{imagePath}}
+<br>
+{{description}}
+<br>
+{{/each}}
+
