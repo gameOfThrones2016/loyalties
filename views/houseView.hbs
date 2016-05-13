@@ -1,18 +1,31 @@
-{{#each House}}
-{{name}}
-<br>
-{{imagePath}}
-<br>
-{{description}}
-<br>
-{{/each}}
+<div class="wrapper">
+<div class="container" id="houseIndexWrapper">
+  <header>
 
-{{#each People}}
-{{name}}
-<br>
-{{imagePath}}
-<br>
-{{description}}
-<br>
-{{/each}}
+ </header>
 
+
+  <div class ="house-view">
+    {{#each House}}
+          <img src="{{imagePath}}" class="houseimage2">
+      <div class="houseDetails">
+          <h1>{{name}}</h1>
+          <p>{{description}}</p>
+
+      </div>
+    {{/each}}
+  </div>
+</div>
+<div class="members-wrapper">
+<div class="members">
+  {{#each People}}
+    <h3>{{name}}</h3>
+      <br>
+   <img src="{{imagePath}}" >
+      <br>
+    <p>{{description}}</p>
+    <br>
+  {{/each}}
+</div>
+</div>
+</div>

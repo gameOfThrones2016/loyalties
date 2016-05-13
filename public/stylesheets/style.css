@@ -8,6 +8,7 @@ html {
     text-align:center;
     font-size:20px;
     height: 100%;
+    letter-spacing: 2px;
 
 }
 
@@ -21,7 +22,7 @@ body {
 nav a {
   display: inline-flex;
   padding-right: 30px;
-  margin-top:100px;
+  margin-top:50px;
 
 }
 
@@ -127,7 +128,63 @@ justify-content: center;
 }
 
 .houseimage {
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   width: 300px;
   height: 250px;
 
 }
+
+.house-view {
+
+  display: inline-flex;
+  color: gold;
+
+}
+.houseimage2 {
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  width: 360px;
+  height: 250px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.houseDetails {
+  text-align: left;
+  padding-left: 5%;
+  max-width: 790px;
+}
+
+.houseDetails h1 {
+ color: gold;
+}
+
+.houseDetails p {
+ color: #000;
+}
+.members {
+max-width: 600px;
+text-align: left;
+margin-left: 20px;
+
+}
+.members h3 {
+margin-bottom: -1px;
+text-align: left;
+color: gold;
+}
+
+.members img{
+  width:100px;
+  height:130px;
+}
+
+.wrapper {
+background-color: rgba(255, 255, 255, 0.2);
+width:1100px;
+padding-right: 50px;
+padding-left: 50px;
+margin-right: 20%;
+margin-left: 20%;
+}
+
+
+

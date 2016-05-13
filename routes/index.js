@@ -28,7 +28,9 @@ router.get('/newhouse', function(req, res, next) {
 });
 
 router.post('/newhouse', function(req, res, next) {
-  res.redirect('/house/:id', { title: 'A New Dev' });
+  db.addNew('houses', req.body, function(err, data){
+    res.redirect('/house/'+data[0]);
+  })
 });
 
 router.get('/house/edit/:id', function(req, res, next) {
@@ -53,7 +55,10 @@ router.get('/newcharacter', function(req, res, next) {
 });
 
 router.post('/newcharacter', function(req, res, next) {
-  res.redirect('/character/:id', { title: 'A New Dev' });
+  console.log(req.body)
+  db.addNew('characters', req.body, function(err, data){
+    res.redirect('/characters/'+data[0]);
+  })
 });
 
 router.get('/character/edit/:id', function(req, res, next) {

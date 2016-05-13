@@ -9,6 +9,8 @@ var hbs = require('express-hbs') // handlebars
 var routes = require('./routes/index');
 
 var app = express();
+app.use(express.static(__dirname));
+
 
 // view engine setup
 app.engine('hbs', hbs.express4({
