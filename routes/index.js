@@ -1,3 +1,4 @@
+
 var express = require('express');
 var router = express.Router();
 var Knex = require('knex')
@@ -7,8 +8,27 @@ var db = require('../lib/db')(knex)
 
 /* GET home page. */
 //-------DONE-------------//
- router.get('/', function(req, res, next) {
+router.get('/', function(req, res, next) {
+  res.render('login')
+}); 
+
+
+
+router.get('/auth/facebook', 
+  passport.authenticate('facebook'))
+
+router.get('/auth/facebook/callback', 
+  passport.authenticate('facebook', {failureRedirect: '/login'}),
+  function (req, res) {
+    res.redirect('/houses')
+  }
+)
+
+
+
+ router.get('/houses', function(req, res, next) {
   db.getAll('houses', function(err, data) {
+    console.log("session log: ", req.session)
     res.render('houseindex', { Houses: data });
   })
 });
@@ -24,7 +44,9 @@ router.get('/house/:id', function(req, res, next) {
 });
 
 router.get('/newhouse', function(req, res, next) {
-  res.render('newHouse', { title: 'A New Dev' });
+  db.getAll('houses', function (err, data) {
+    res.render('newHouse', { houses: data});
+  })
 });
 
 router.post('/newhouse', function(req, res, next) {
@@ -55,7 +77,6 @@ router.get('/newcharacter', function(req, res, next) {
 });
 
 router.post('/newcharacter', function(req, res, next) {
-  console.log(req.body)
   db.addNew('characters', req.body, function(err, data){
     res.redirect('/characters/'+data[0]);
   })

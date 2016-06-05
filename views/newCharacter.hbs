@@ -1,12 +1,28 @@
+
 "<h3>Add a New Character to Game of Devs Here</h3>
 
 <form method="POST" class="addCharacter" id="addCharacter" action="/newcharacter"/>
 
   Name: <input id="name" type="text" name="name" placeholder="Lord Rohan"></input>
-  House: <input id="house" type="text" name="house" placeholder="House Tieke"></input>
+  House: <select id="selecthouse" name="house">
+		</select>
+
+
   Image Path: <input id="imagePath" type="text" name="imagePath" placeholder=""></input>
   Life Scroll: <input id="description" type="text" name="description" placeholder="Born into a family of direwolves"></input>
   <input type="submit" id="submitButton" value="Enter The Kingdom"></input>
 
 <input type="hidden" name="houseId" value="setHouseId()">
 </form>
+
+
+
+<script>
+	console.log("hello")
+	{{#each houses}}
+		var houseOption = document.createElement("option")
+		houseOption.value = {{name}}
+		houseOption.text = {{name}}
+		document.getElementById("selecthouse").appendChild(houseOption)
+	{{/each}}	
+</script>
